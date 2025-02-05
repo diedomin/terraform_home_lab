@@ -48,6 +48,7 @@ inputs = {
     { name = "_dmarc", content = "v=DMARC1; p=none; rua=mailto:reportes@${local.base_domain}; ruf=mailto:reportes@${local.base_domain}; pct=100", type = "TXT", ttl = 300 },
     { name = "atlas", content = "192.168.100.50", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "hermes", content = "192.168.100.48", type = "A", ttl = local.default_ttl, proxied = false},
+    { name = "stf", content = "192.168.100.47", type = "A", ttl = local.default_ttl, proxied = false},
     { name = "jellyfin", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "docmost", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "immich", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },

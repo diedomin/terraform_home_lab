@@ -17,8 +17,8 @@ Usage:
 
     Clone this repository to your local machine
     Create a ‘secrets’ folder to include the files aws.yml and cloudflare.yml.
-    Run terraform init to initialize the Terraform state
-    Run terraform apply to apply the configuration
+    Run terragrunt init to initialize the Terraform state
+    Run terragrunt apply to apply the configuration
 
 Notes:
 
