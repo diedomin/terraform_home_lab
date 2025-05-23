@@ -1,4 +1,3 @@
-# Definir valores comunes para todos los módulos
 locals {
   aws_region                  = "eu-west-3"
   s3_tfstate_bucket_name      = yamldecode(sops_decrypt_file("${get_parent_terragrunt_dir()}/secrets/aws.yml"))["s3_tfstate_bucket_name"]
