@@ -57,7 +57,6 @@ inputs = {
     { name = "drawio", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "excalidraw", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "grafana", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "home", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "paperless", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "pdf", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "prometheus", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
