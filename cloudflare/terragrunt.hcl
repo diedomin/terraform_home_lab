@@ -53,6 +53,7 @@ inputs = {
     { name = "docmost", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "immich", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "nextcloud", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "n8n", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "alertmanager", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "drawio", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "excalidraw", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
