@@ -63,6 +63,7 @@ inputs = {
     { name = "qbittorrent", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "tools", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
   ]
+
   instance_records = [
     { name = "atlas", content = "192.168.100.50", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "hermes", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
