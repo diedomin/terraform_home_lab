@@ -15,6 +15,18 @@ variable "dns_records" {
   }))
 }
 
+variable "service_records" {
+  type = list(object({
+    name     = string
+    content  = string
+    type     = string
+    ttl      = number
+    priority = optional(number)
+    proxied  = optional(bool)
+    tags     = optional(list(string))
+  }))
+}
+
 variable "instance_records" {
   type = list(object({
     name     = string

@@ -45,7 +45,10 @@ inputs = {
   dns_records = [
     { name = "${local.base_domain}", content = "mx01.dondominio.com", type = "MX", ttl = 300, priority = 10 },
     { name = "${local.base_domain}", content = "v=spf1 include:spf.dondominio.com", type = "TXT", ttl = 300 },
-    { name = "_dmarc", content = "v=DMARC1; p=none; rua=mailto:reportes@${local.base_domain}; ruf=mailto:reportes@${local.base_domain}; pct=100", type = "TXT", ttl = 300 },
+    { name = "_dmarc", content = "v=DMARC1; p=none; rua=mailto:reportes@${local.base_domain}; ruf=mailto:reportes@${local.base_domain}; pct=100", type = "TXT", ttl = 300 }
+  ]
+
+  service_records = [
     { name = "jellyfin", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "docmost", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "immich", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
