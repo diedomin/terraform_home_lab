@@ -33,7 +33,7 @@ locals {
   env                         = local.common_vars.locals.env
   dynamodb_tfstate_table_name = local.common_vars.locals.dynamodb_tfstate_table_name
   base_domain                 = yamldecode(sops_decrypt_file("${get_parent_terragrunt_dir()}/secrets/cloudflare.yml"))["base_domain"]
-  default_ttl                 = 3600
+  default_ttl                 = 300
 }
 
 inputs = {
@@ -62,12 +62,12 @@ inputs = {
     { name = "pdf", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "prometheus", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "qbittorrent", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "tools", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "tools", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
   ]
 
   instance_records = [
     { name = "atlas", content = "192.168.100.50", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "hermes", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "lb1", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "stf", content = "192.168.100.47", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "master-01", content = "192.168.100.61", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "master-02", content = "192.168.100.62", type = "A", ttl = local.default_ttl, proxied = false },
