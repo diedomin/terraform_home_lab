@@ -63,6 +63,7 @@ inputs = {
     { name = "prometheus", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "qbittorrent", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "tools", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "traefik", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
   ]
 
   instance_records = [
