@@ -48,33 +48,40 @@ inputs = {
     { name = "_dmarc", content = "v=DMARC1; p=none; rua=mailto:reportes@${local.base_domain}; ruf=mailto:reportes@${local.base_domain}; pct=100", type = "TXT", ttl = 300 }
   ]
 
-  service_records = [
-    { name = "jellyfin", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "docmost", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "immich", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "nextcloud", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "n8n", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+  private_service_records = [
     { name = "alertmanager", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "drawio", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "excalidraw", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "grafana", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "paperless", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "pdf", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "pdf", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "prometheus", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "qbittorrent", content = "atlas.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "tools", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "tools", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "traefik", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "priv-traefik", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "longhorn", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false }
+  ]
+
+  public_service_records = [
+    { name = "jellyfin", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "docmost", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "immich", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "nextcloud", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "n8n", content = "${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false }
   ]
 
   instance_records = [
     { name = "atlas", content = "192.168.100.50", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "lb1", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "hermes", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "lb1", content = "192.168.100.200", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "lb2", content = "192.168.100.201", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "stf", content = "192.168.100.47", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "master-01", content = "192.168.100.61", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "master-02", content = "192.168.100.62", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "master-03", content = "192.168.100.63", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "worker-01", content = "192.168.100.64", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "worker-02", content = "192.168.100.65", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "worker-03", content = "192.168.100.66", type = "A", ttl = local.default_ttl, proxied = false }
+    { name = "kbm1", content = "192.168.100.61", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "kbm2", content = "192.168.100.62", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "kbm3", content = "192.168.100.63", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "kbw1", content = "192.168.100.64", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "kbw2", content = "192.168.100.65", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "kbw3", content = "192.168.100.66", type = "A", ttl = local.default_ttl, proxied = false }
   ]
 }
