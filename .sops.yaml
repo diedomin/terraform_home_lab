@@ -1,0 +1,4 @@
+creation_rules:
+  - path_regex: ^secrets/.*\.(yml|yaml)$
+    age: age14y5wlmh7fdup4p6ex6kfapjs49xtw820p28ctajmclkvnypn3fjqqn42wd
+    kms: arn:aws:kms:eu-west-3:343218189199:key/b0f1caba-3405-46e9-898f-10400d570242

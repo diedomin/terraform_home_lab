@@ -1,8 +1,6 @@
-secrets/*
 *.tfstate
 *.tfstate.backup
 .terraform/
 .terraform.lock.hcl
 backend.tf
 */.terragrunt-cache
-

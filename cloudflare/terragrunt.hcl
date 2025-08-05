@@ -60,7 +60,8 @@ inputs = {
     { name = "tools", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "traefik", content = "lb1.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
     { name = "priv-traefik", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
-    { name = "longhorn", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false }
+    { name = "longhorn", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false },
+    { name = "argocd", content = "lb2.${local.base_domain}", type = "CNAME", ttl = local.default_ttl, proxied = false }
   ]
 
   public_service_records = [
@@ -73,7 +74,7 @@ inputs = {
 
   instance_records = [
     { name = "atlas", content = "192.168.100.50", type = "A", ttl = local.default_ttl, proxied = false },
-    { name = "hermes", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
+    { name = "nm1", content = "192.168.100.49", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "lb1", content = "192.168.100.200", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "lb2", content = "192.168.100.201", type = "A", ttl = local.default_ttl, proxied = false },
     { name = "stf", content = "192.168.100.47", type = "A", ttl = local.default_ttl, proxied = false },
